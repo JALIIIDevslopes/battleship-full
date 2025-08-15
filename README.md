@@ -2,7 +2,7 @@ Playing  BattleShip
 
 
 "node game.js"
-or "npm run start_game"
+or "npm run start-game"
 
 
 Setting up ships
@@ -31,7 +31,7 @@ It will then tell you if you missed (no ship was there ) and show a "❗" on you
 you made a hit on a ship and show a "❌" on your next turn
 if the resulting hit causing one of the ships to sink it will tell you the type of ship you sunk and show the ship icons on your next turn
 
-During the computers turn you see where your ships are.
+During the computer's turn you see where your ships are.
 the computer makes a guess,
 if it misses it will show a "❗" on its next turn
 if it makes a hit it will show a  "❌" on its next turn  it will say if it sinks one of your ships
