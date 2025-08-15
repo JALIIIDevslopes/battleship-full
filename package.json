@@ -1,0 +1,20 @@
+{
+  "type":"module",
+ "main": "game.js",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "scripts": {
+  "start-game": "node game.js"
+},
+"pkg": {
+    "targets": [
+      "node14",
+      "node16",
+      "node18",
+      "node20",
+      "node22"
+    ]
+  }
+
+}
