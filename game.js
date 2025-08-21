@@ -63,7 +63,7 @@ while (!placed.every(x => x))
   console.log("Place your ships");
   console.table(playerBoard.printBoard(true));
   while (shipType>4 && firstPrompt.trim().length == 0) {
-    firstPrompt=readlineSync.question("Pick  a ship type to place 0=Carrier 1=Battleship 2=Destroyer 3=Submarine 4=PatrolBoat");
+    firstPrompt=readlineSync.question("Pick  a ship type to place 0=Carrier 1=Battleship 2=Destroyer 3=Submarine 4=PatrolBoat").toUpperCase();
 
   if (!myregEx3.test(firstPrompt)) {
     console.log("Invalid entry");
@@ -80,11 +80,11 @@ while (!placed.every(x => x))
     answer="P";
     firstPrompt=""; 
     while (answer=="P" && firstPrompt.trim().length == 0) {
-      firstPrompt=readlineSync.question("You already placed that do you want to change it Y or N?");
+      firstPrompt=readlineSync.question("You already placed that do you want to change it Y or N?").toUpperCase();
       if (!myregEx4.test(firstPrompt)) {
         answer="P"
         firstPrompt="";
-  } else {answer=firstPrompt}
+  } else {answer=firstPrompt;}
     
   }
   if (answer=="Y") {
@@ -102,7 +102,7 @@ if (shipType<5) {
   while (!placed[shipType]) {
 firstPrompt="";
 while (myShips[shipType].x>bsize && myShips[shipType].y>bsize && firstPrompt.trim().length == 0 ) {
-   firstPrompt=readlineSync.question("Pick a location A0-J9 and direction 0 horizontal 1 vertical (A3,1 C3,0)");
+   firstPrompt=readlineSync.question("Pick a location A0-J9 and direction 0 horizontal 1 vertical (A3,1 C3,0)").toUpperCase();
       if (!myregEx2.test(firstPrompt)) {
         myShips[shipType].changeLocation(43,43);
   } else {
@@ -142,7 +142,7 @@ readlineSync.question("Hit Enter to continue");
     !gameBoard.isValidGuess(guessX, guessY) &&
     secondPrompt.trim().length == 0
   ) {
-    secondPrompt = readlineSync.question(`Make a guess eg.. A1, B2, etc... `);
+    secondPrompt = readlineSync.question(`Make a guess eg.. A1, B2, etc... `).toUpperCase();
 
     if (myregEx1.test(secondPrompt)) {
       guess = secondPrompt.split("");
@@ -189,7 +189,7 @@ guessY = Math.max(0, Math.min(9, guessY));
   }
 }
   playerBoard.guess(guessX,guessY);
-  if (playerBoard.isHit(guessX,guessY)){
+  if (playerBoard.isHit(guessX,guessY)) {
     lastSuccessX=guessX;
     lastSuccessY=guessY;
   }
@@ -225,7 +225,7 @@ __   _______ _   _   _    _ _____ _   _
   \\_/  \\___/ \\___/   \\/  \\/ \\___/\\_| \\_/
 ========
 `);
-}
+} 
 else {
   console.log(`
   ========

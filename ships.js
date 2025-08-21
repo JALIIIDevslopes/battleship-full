@@ -29,13 +29,13 @@ export class Ship {
 
 export class Carrier extends Ship {
   constructor(x, y, direction) {
-    super(5, "🔵", x, y, direction,"carrier");
+    super(5, process.platform=="linux"?"🔵":"A", x, y, direction,"carrier");
   }
 }
 
 export class BattleShip extends Ship {
   constructor(x, y, direction) {
-    super(4, "🟣", x, y, direction,"battleship");
+    super(4, process.platform=="linux"?"🟣":"B", x, y, direction,"battleship");
   }
 }
 
@@ -43,19 +43,19 @@ export class BattleShip extends Ship {
 
 export class  Destroyer extends Ship {
   constructor(x, y, direction) {
-    super(3, "🟢", x, y, direction,"destroyer");
+    super(3, process.platform=="linux"?"🟢":"C", x, y, direction,"destroyer");
   }
 }
 
 export class  Submarine extends Ship {
   constructor(x, y, direction) {
-    super(3, "🟡", x, y, direction,"submarine");
+    super(3, process.platform=="linux"?"🟡":"D", x, y, direction,"submarine");
   }
 }
 
 
 export class PatrolBoat extends Ship {
   constructor(x, y, direction) {
-    super(2, "🟠", x, y, direction, "patrolboat");
+    super(2, process.platform=="linux"?"🟠":"E", x, y, direction, "patrolboat");
   }
 }

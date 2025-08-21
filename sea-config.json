@@ -1,0 +1,12 @@
+{
+  "name":"BattleShip", 
+  "type":"module",
+ "main": "game.cjs",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "output": "game.exe",
+  "disableExperimentalSEAWarning": false,
+  "useSnapshot": false,
+  "useCodeCache": true
+}

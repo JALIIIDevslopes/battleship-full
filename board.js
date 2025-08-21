@@ -28,18 +28,18 @@ export class Cell {
     this.ship = ship;
   }
 
-  showIcon(revealMe, bId) {
+  showIcon(reveal, id) {
     return (
-      (this.isHit() && this.isSunk() && bId == 0) ||
-      revealMe ||
-      (!this.isHit() && bId == 1)
+      (this.isHit() && this.isSunk() && id == 0) ||
+      reveal ||
+      (!this.isHit() && id == 1)
     );
   }
 
-  showX(bId) {
+  showX(id) {
     return (
-      (this.isHit() && !this.isSunk() && bId == 0) ||
-      (this.isHit() && bId == 1));
+      (this.isHit() && !this.isSunk() && id == 0) ||
+      (this.isHit() && id == 1));
   }
 
   strike() {
@@ -52,14 +52,14 @@ export class Cell {
     return this.struct;
   }
 
-  printCell(revealIt, bId) {
+  printCell(reveal, id) {
     return this.isEmpty() && !this.isHit()
       ? "-"
       : this.isEmpty()
       ? "❗"
-      : this.showIcon(revealIt, bId)
+      : this.showIcon(reveal, id)
       ? this.icon
-      : this.showX(bId)
+      : this.showX(id)
       ? "❌"
       : "-";
   }
@@ -149,10 +149,10 @@ export class Board {
     return temp;
   }
 
-  printBoard(revealZ) {
+  printBoard(reveal) {
     let temp = {};
     for (let i = 0; i < this.size; i++) {
-      temp[String.fromCharCode(65 + i)] = this.showRow(i, revealZ);
+      temp[String.fromCharCode(65 + i)] = this.showRow(i, reveal);
     }
     return temp;
   }
@@ -182,9 +182,9 @@ export class Board {
   }
 
   gameWon() {
-    let revealMe = this.hits == this.neededHits;
+    let reveal = this.hits == this.neededHits;
     {
-      return revealMe;
+      return reveal;
     }
   }
 }
